@@ -1642,7 +1642,7 @@ CREATE TABLE `pms_product_vertify_record`  (
   `product_id` bigint(20) NULL DEFAULT NULL,
   `create_time` datetime NULL DEFAULT NULL,
   `vertify_man` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '审核人',
-  `status` int(1) NULL DEFAULT NULL,
+  `status` int(1) NULL DEFAULT NULL COMMENT '审核后的状态：0->未通过；2->已通过',
   `detail` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '反馈详情',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '商品审核记录' ROW_FORMAT = DYNAMIC;
