@@ -33,6 +33,7 @@ services:
   rabbitmq:
     image: rabbitmq:3.9.11-management
     container_name: rabbitmq
+    hostname: rabbitmq
     volumes:
       - /home/loctd/code/data/mall/rabbitmq/data:/var/lib/rabbitmq #数据文件目录挂载
     ports:
@@ -102,9 +103,15 @@ services:
     container_name: redis-commander
     depends_on:
       - redis
-    links:
-      - redis
     environment:
       - REDIS_HOSTS=redis
     ports:
     - 8181:8081
+  adminer:
+    image: adminer
+    depends_on:
+      - mysql
+    links:
+      - mysql:db
+    ports:
+      - 8888:8080
