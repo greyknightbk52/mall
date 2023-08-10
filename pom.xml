@@ -232,7 +232,7 @@
                                 <!--定义镜像构建行为-->
                                 <build>
                                     <!--定义基础镜像-->
-                                    <from>openjdk:8</from>
+                                    <from>java:8</from>
                                     <args>
                                         <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
                                     </args>
